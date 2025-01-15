@@ -1,5 +1,9 @@
-package org.example;
+package org.Lexicon.group54;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -13,6 +17,7 @@ public class Main {
 
         while (!exit) {
 
+            dayAndDate();  //Shows local date and time
             // Printing user choice
             System.out.println("Currency Converter");
             System.out.println("SEK to USD         : 1");
@@ -22,6 +27,8 @@ public class Main {
             System.out.println("Exit: 5");
             System.out.println("Choose one of the following operation: ");
             choice = terminalInput.nextInt();
+
+
 
             //The following code checks user input and calls correct method
             if (choice == 1) {
@@ -42,6 +49,15 @@ public class Main {
 
             }
         }
+    }
+
+    static void dayAndDate(){
+        String formattedTime; // Variable that will contain the formatted time
+        LocalTime timeNow = LocalTime.now();  // Gets current time form java.time
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(" HH:mm:ss ");    // sets the format for how the time should be displayed
+        formattedTime = timeNow.format(formatter);
+        System.out.println(LocalDate.now() +" " +formattedTime);
     }
 
     //Method for addition takes two integer and adds

@@ -15,29 +15,29 @@ public class Main {
 
             // Printing user choice
             System.out.println("Currency Converter");
-            System.out.println("Addition        + : 1");
-            System.out.println("Subtraction     - : 2");
-            System.out.println("Multiplication  * : 3");
-            System.out.println("Division        / : 4");
+            System.out.println("SEK to USD         : 1");
+            System.out.println("USD to SEK         : 2");
+            System.out.println("SEK to Euro        : 3");
+            System.out.println("Euro to Sek        : 4");
             System.out.println("Exit: 5");
             System.out.println("Choose one of the following operation: ");
             choice = terminalInput.nextInt();
 
             //The following code checks user input and calls correct method
             if (choice == 1) {
-                System.out.println("Addition: ");
-                addition();
+                System.out.println("SEK to USD: ");
+                sekToUsd();
             } else if (choice == 2) {
-                System.out.println("Subtraction: ");
-                subtraction();
+                System.out.println("USD to SEK: ");
+                usdToSek();
             } else if (choice == 3) {
-                System.out.println("Multiplication: ");
-                multiplication();
+                System.out.println("SEK to EURO: ");
+                sekToEuro();
             } else if (choice == 4) {
-                System.out.println("Division: ");
-                division();
+                System.out.println("EURO to SEK: ");
+                euroToSek();
             } else {
-                System.out.println("Closing calculator! ");
+                System.out.println("Quitting Currency Converter! ");
                 exit = true;
 
             }
@@ -45,7 +45,7 @@ public class Main {
     }
 
     //Method for addition takes two integer and adds
-    static void addition() {
+    static void sekToUsd() {
         Scanner terminalInput = new Scanner(System.in); //Check if it is possible to declare global so that we can remove this line of code
         System.out.println("Enter two numbers");
         int num1 = terminalInput.nextInt();
@@ -54,8 +54,8 @@ public class Main {
     }
 
     // Method for subtraction, takes two integer and subracts
-    static void subtraction() {
-        Scanner terminalInput = new Scanner(System.in); //Check if it is possible to declare global so that we can remove this line of code
+    static void usdToSek() {
+        Scanner terminalInput = new Scanner(System.in);
         System.out.println("Enter two numbers");
         int num1 = terminalInput.nextInt();
         int num2 = terminalInput.nextInt();
@@ -63,7 +63,7 @@ public class Main {
     }
 
     // Method for multiplication takes two integer and multiply
-    static void multiplication() {
+    static void sekToEuro() {
         Scanner terminalInput = new Scanner(System.in); //Check if it is possible to declare global so that we can remove this line of code
         System.out.println("Enter two numbers");
         int num1 = terminalInput.nextInt();
@@ -72,7 +72,7 @@ public class Main {
     }
 
     // Method for division takes two integer and devides
-    static void division() {
+    static void euroToSek() {
         Scanner terminalInput = new Scanner(System.in); //Check if it is possible to declare global so that we can remove this line of code
         System.out.println("Enter two numbers");
         int num1 = terminalInput.nextInt();

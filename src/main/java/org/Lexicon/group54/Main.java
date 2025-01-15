@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         menu();
+       
     }
 
 
@@ -24,7 +25,6 @@ public class Main {
 
         while (!exit)
         {
-
             // Printing user choice
             System.out.println();          //This line is only for formatting and make it easier to read
             System.out.println("Currency Converter");
@@ -37,7 +37,10 @@ public class Main {
             choice = terminalInput.nextInt();
 
              //The following code checks user input and calls correct method
-             if (choice == 1) {
+             if (choice < 1 || choice > 5){
+                 System.out.println("Choose a selection between 1 - 5");
+             }
+             else if (choice == 1) {
                  System.out.println("SEK to USD: ");
                  sekToUsd();
              } else if (choice == 2) {
@@ -57,16 +60,7 @@ public class Main {
 
     }
 
-
-
-
-
-
-
-
-
-
-
+    //This method shows date and day in a formatted way
     static void dayAndDate(){
         String formattedTime; // Variable that will contain the formatted time
         LocalTime timeNow = LocalTime.now();  // Gets current time form java.time
@@ -76,7 +70,7 @@ public class Main {
         System.out.println(LocalDate.now() +" " +formattedTime);
     }
 
-    //Method for addition takes two integer and adds
+    //Method for exchanging SEK to EURO
     static void sekToUsd() {
         double rateSekToUsd =  0.09;
         Scanner terminalInput = new Scanner(System.in);
@@ -87,6 +81,7 @@ public class Main {
     }
 
 
+    //Method for exchanging USD to SEK
     static void usdToSek() {
         double rateUsdToSek = 11.15;
         Scanner terminalInput = new Scanner(System.in);
@@ -96,7 +91,7 @@ public class Main {
         System.out.println(num1 +" USD is " + (num1 * rateUsdToSek) +" SEK");
     }
 
-
+    //Method for exchanging SEK to EURO
     static void sekToEuro() {
         double rateSekToEuro = 0.087;
         Scanner terminalInput = new Scanner(System.in);
@@ -107,6 +102,7 @@ public class Main {
     }
 
 
+    //Method for exchanging Euro to SEK
     static void euroToSek() {
       double rateSekToEuro = 11.49;
       Scanner terminalInput = new Scanner(System.in);

@@ -84,6 +84,7 @@ public class Main {
         double rateSekToUsd = 0.09;
         Scanner terminalInput = new Scanner(System.in);
         System.out.println("How much Sek would you like to exchange: ");
+        validateInput(terminalInput); // Validating input
         int num1 = terminalInput.nextInt();
         dayAndDate();
         System.out.println(num1 + " SEK is " + (num1 * rateSekToUsd) + " USD");
@@ -95,6 +96,7 @@ public class Main {
         double rateUsdToSek = 11.15;
         Scanner terminalInput = new Scanner(System.in);
         System.out.println("How much USD would you like to exchange");
+        validateInput(terminalInput); // Validating input
         int num1 = terminalInput.nextInt();
         dayAndDate();
         System.out.println(num1 + " USD is " + (num1 * rateUsdToSek) + " SEK");
@@ -105,6 +107,7 @@ public class Main {
         double rateSekToEuro = 0.087;
         Scanner terminalInput = new Scanner(System.in);
         System.out.println("How much Sek would you like to exchange");
+        validateInput(terminalInput); // Validating input
         int num1 = terminalInput.nextInt();
         dayAndDate();
         System.out.println(num1 + " Sek is " + (num1 * rateSekToEuro) + " Euro");
@@ -116,6 +119,7 @@ public class Main {
         double rateSekToEuro = 11.49;
         Scanner terminalInput = new Scanner(System.in);
         System.out.println("How much Sek would you like to exchange");
+        validateInput(terminalInput); // Validating input
         int num1 = terminalInput.nextInt();
         dayAndDate();
         System.out.println(num1 + " Euro is " + (num1 * rateSekToEuro) + " SEK");

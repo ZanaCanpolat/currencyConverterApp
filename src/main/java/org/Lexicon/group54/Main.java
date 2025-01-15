@@ -17,8 +17,8 @@ public class Main {
 
         while (!exit) {
 
-            dayAndDate();  //Shows local date and time
             // Printing user choice
+            System.out.println();          //This line is only for formatting and make it easier to read
             System.out.println("Currency Converter");
             System.out.println("SEK to USD         : 1");
             System.out.println("USD to SEK         : 2");
@@ -50,7 +50,7 @@ public class Main {
             }
         }
     }
-
+    // Method that shows date and time in a special format
     static void dayAndDate(){
         String formattedTime; // Variable that will contain the formatted time
         LocalTime timeNow = LocalTime.now();  // Gets current time form java.time
@@ -62,38 +62,42 @@ public class Main {
 
     //Method for addition takes two integer and adds
     static void sekToUsd() {
-        Scanner terminalInput = new Scanner(System.in); //Check if it is possible to declare global so that we can remove this line of code
-        System.out.println("Enter two numbers");
-        int num1 = terminalInput.nextInt();
-        int num2 = terminalInput.nextInt();
-        System.out.println("Result: " + (num1 + num2));
-    }
-
-    // Method for subtraction, takes two integer and subracts
-    static void usdToSek() {
+        double rateSekToUsd =  0.09;
         Scanner terminalInput = new Scanner(System.in);
-        System.out.println("Enter two numbers");
+        System.out.println("How much Sek would you like to exchange: ");
         int num1 = terminalInput.nextInt();
-        int num2 = terminalInput.nextInt();
-        System.out.println("Result: " + (num1 - num2));
+        dayAndDate();
+        System.out.println(num1 + " SEK is " + (num1 * rateSekToUsd) +" USD");
     }
 
-    // Method for multiplication takes two integer and multiply
+
+    static void usdToSek() {
+        double rateUsdToSek = 11.15;
+        Scanner terminalInput = new Scanner(System.in);
+        System.out.println("How much USD would you like to exchange");
+        int num1 = terminalInput.nextInt();
+        dayAndDate();
+        System.out.println(num1 +" USD is " + (num1 * rateUsdToSek) +" SEK");
+    }
+
+
     static void sekToEuro() {
-        Scanner terminalInput = new Scanner(System.in); //Check if it is possible to declare global so that we can remove this line of code
-        System.out.println("Enter two numbers");
+        double rateSekToEuro = 0.087;
+        Scanner terminalInput = new Scanner(System.in);
+        System.out.println("How much Sek would you like to exchange");
         int num1 = terminalInput.nextInt();
-        int num2 = terminalInput.nextInt();
-        System.out.println("Result: " + (num1 * num2));
+        dayAndDate();
+        System.out.println(num1 +" Sek is " +(num1 * rateSekToEuro) + " Euro" );
     }
 
-    // Method for division takes two integer and devides
+
     static void euroToSek() {
-        Scanner terminalInput = new Scanner(System.in); //Check if it is possible to declare global so that we can remove this line of code
-        System.out.println("Enter two numbers");
-        int num1 = terminalInput.nextInt();
-        int num2 = terminalInput.nextInt();
-        System.out.println("Result: " + (num1 / num2));
+      double rateSekToEuro = 11.49;
+      Scanner terminalInput = new Scanner(System.in);
+      System.out.println("How much Sek would you like to exchange");               
+      int num1 = terminalInput.nextInt();
+      dayAndDate();
+      System.out.println(num1 +" Euro is " +(num1 * rateSekToEuro) + " SEK" );
     }
 
 }

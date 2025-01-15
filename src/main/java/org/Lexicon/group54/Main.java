@@ -9,13 +9,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        menu();
+    }
+
+
+    // This method shows a menu to the user
+    static void menu()
+    {
+
         //variable declarations
         Scanner terminalInput = new Scanner(System.in);
         int choice;
         boolean exit = false;
 
-
-        while (!exit) {
+        while (!exit)
+        {
 
             // Printing user choice
             System.out.println();          //This line is only for formatting and make it easier to read
@@ -28,29 +36,37 @@ public class Main {
             System.out.println("Choose one of the following operation: ");
             choice = terminalInput.nextInt();
 
+             //The following code checks user input and calls correct method
+             if (choice == 1) {
+                 System.out.println("SEK to USD: ");
+                 sekToUsd();
+             } else if (choice == 2) {
+                 System.out.println("USD to SEK: ");
+                 usdToSek();
+             } else if (choice == 3) {
+                 System.out.println("SEK to EURO: ");
+                 sekToEuro();
+             } else if (choice == 4) {
+                 System.out.println("EURO to SEK: ");
+                 euroToSek();
+             } else {
+                 System.out.println("Quitting Currency Converter! ");
+                 exit = true;
+             }
+         }
 
-
-            //The following code checks user input and calls correct method
-            if (choice == 1) {
-                System.out.println("SEK to USD: ");
-                sekToUsd();
-            } else if (choice == 2) {
-                System.out.println("USD to SEK: ");
-                usdToSek();
-            } else if (choice == 3) {
-                System.out.println("SEK to EURO: ");
-                sekToEuro();
-            } else if (choice == 4) {
-                System.out.println("EURO to SEK: ");
-                euroToSek();
-            } else {
-                System.out.println("Quitting Currency Converter! ");
-                exit = true;
-
-            }
-        }
     }
-    // Method that shows date and time in a special format
+
+
+
+
+
+
+
+
+
+
+
     static void dayAndDate(){
         String formattedTime; // Variable that will contain the formatted time
         LocalTime timeNow = LocalTime.now();  // Gets current time form java.time
@@ -94,7 +110,7 @@ public class Main {
     static void euroToSek() {
       double rateSekToEuro = 11.49;
       Scanner terminalInput = new Scanner(System.in);
-      System.out.println("How much Sek would you like to exchange");               
+      System.out.println("How much Sek would you like to exchange");
       int num1 = terminalInput.nextInt();
       dayAndDate();
       System.out.println(num1 +" Euro is " +(num1 * rateSekToEuro) + " SEK" );
